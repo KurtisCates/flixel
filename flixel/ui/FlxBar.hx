@@ -754,7 +754,7 @@ class FlxBar extends FlxSprite
 		var percent:Float = fraction * _maxPercent;
 		var maxScale:Float = (_fillHorizontal) ? barWidth : barHeight;
 		var scaleInterval:Float = maxScale / numDivisions;
-		var interval:Float = Math.round(Std.int(fraction * maxScale / scaleInterval) * scaleInterval);
+		var interval:Float = Math.round(Math.round(fraction * maxScale / scaleInterval) * scaleInterval);
 
 		if (_fillHorizontal)
 		{
@@ -824,7 +824,7 @@ class FlxBar extends FlxSprite
 	{
 		if (parent != null)
 		{
-			if (Reflect.getProperty(parent, parentVariable) != value)
+			if (Reflect.getProperty(parent, parentVariable) && Reflect.getProperty(parent, parentVariable) != value)
 			{
 				updateValueFromParent();
 			}
