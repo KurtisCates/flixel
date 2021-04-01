@@ -116,6 +116,8 @@ class FlxBasic implements IFlxDestroyable
 	 */
 	public function update(elapsed:Float):Void
 	{
+		FlxG.stage.frameRate = FlxG.stage.window.displayMode.refreshRate;
+
 		#if FLX_DEBUG
 		activeCount++;
 		#end
